@@ -1,0 +1,25 @@
+# COMMENT LINE written by application such as ACAD, Gridgen  # THESE COMMENT LINES on the RHS CANNOT exist in the facet file!!
+1                                                            # Number of volumes in file (HUGG expects this to be "1")
+# COMMENT (usually contains the word "Volume")
+0                                                            # I don't know what this is for. It is always 0
+nn                                                           # number of points
+X1 Y1 Z1                                                     # x, y and z coordinates for point 1
+X2 Y2 Z2                                                     # x, y and z coordinates for point 2
+X3 Y3 Z3                                                     # x, y and z coordinates for point 3
+  ...
+Xnn Ynn Znn                                                  # x, y and z coordinates for point nn
+nfaces                                                       # of faces or patches
+Face 1 name                                                  # Name of face 1 applied to face by CAD package or Gridgen (I don't use it)
+type   nf      0      0      0      0      0                 # type is 3 (linear triangle), nf is # of facets for current face, other zeros are for higher order elements
+v1 v2 v3 f1_id                                               # three node indices for 1st facet and face material id
+v1 v2 v3 f1_id                                               # three node indices for 2nd facet and face material id
+    ...
+v1 v2 v3 f1_id                                               # three node indices for nfth facet and face material id
+Face 2 name                                                  # Repeat for geometry Face 2
+type   nf      0      0      0      0      0
+v1 v2 v3 f2_id
+v1 v2 v3 f2_id
+    ...
+v1 v2 v3 f2_id
+
+....  repeat for nfaces faces
